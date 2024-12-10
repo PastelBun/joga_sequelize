@@ -12,11 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 
 con.connect(function(err){
     if(err) throw err;
-    console.log("Connected to joga_mysql_oop db");
+    console.log("Connected to joga_sequelize db");
 })
 
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('mysql://root:qwerty@localhost:3000/joga_sequelize') // Example for sqlite
+const sequelize = new Sequelize('mysql://root:qwerty@localhost:3306/joga_sequelize') // Example for sqlite
 
 sequelize 
     .authenticate()

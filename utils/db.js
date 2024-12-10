@@ -6,7 +6,7 @@ const db = mysql.createConnection({
     user: 'root',
     password: 'qwerty',
     database: 'joga_sequelize',
-    multipleStatements: true
+    multipleStatements: true,
 })
 
 db.connect((error) => {
