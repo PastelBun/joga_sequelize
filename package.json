@@ -2,6 +2,7 @@
   "name": "joga_sequelize",
   "version": "1.0.0",
   "main": "index.js",
+  "type":"commonjs",
   "scripts": {
     "test": "node index.js"
   },
