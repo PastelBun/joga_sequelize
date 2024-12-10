@@ -1,6 +1,3 @@
-/*import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-*/
 const express= require('express');
 const app=express();
 const con=require('./utils/db')
@@ -27,9 +24,8 @@ sequelize
     console.error('Unable to connect to the database:', error);
   });
 
-app.get('/', (req, res)=>{
-    res.json({ message: 'Welcome to sequelize application.'});
-});
+const articleRouter=require('./routes/article');
+app.use('/', articleRouter);
 
 app.listen(3000, ()=> {
     console.log('Server is running on port 3000');
