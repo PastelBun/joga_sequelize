@@ -1,14 +1,10 @@
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize('mysql://root:qwerty@localhost:3306/joga_sequelize') // Example for sqlite
 const models=require('../models')
-/*
-const { Article }= require('../models');
-const { error } = require('console');
-*/
+
 const getAllArticles=(req, res)=>{
     models.Article.findAll()
     .then(articles =>{
-        console.log(articles)
         return res.status(200).json({ articles });
     })
     .catch (error => {
@@ -25,7 +21,6 @@ const getArticleBySlug=(req, res)=>{
         }],
     })
     .then(article=>{
-        console.log(article)
         return res.status(200).json({ article })
     })
     .catch(error=>{
