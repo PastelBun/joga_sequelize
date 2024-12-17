@@ -51,7 +51,7 @@ const updateArticle=( req, res )=>{
 const deleteArticle=( req, res )=>{
         
         const id= parseInt(req.params.id)
-        const deletedArticle=models.Article.delete(
+        const deletedArticle=models.Article.destroy(
             {
                 where: {id:id}
             }
